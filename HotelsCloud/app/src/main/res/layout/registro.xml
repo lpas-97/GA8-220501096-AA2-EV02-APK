@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:padding="20dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo" <!-- Asegúrate de agregar tu logo en la carpeta drawable -->
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="20dp"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regístrate"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Campo de nombre y apellido -->
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre y Apellido"
+        android:inputType="textPersonName"
+        android:layout_below="@id/title"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_border" />
+
+    <!-- Campo de correo electrónico -->
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/nombre"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_border" />
+
+    <!-- Campo de nombre de usuario -->
+    <EditText
+        android:id="@+id/nombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de Usuario"
+        android:inputType="text"
+        android:layout_below="@id/correo"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_border"
+        android:pattern="[A-Za-z0-9_.]+"
+        android:title="El nombre de usuario solo puede contener letras, números, guiones bajos (_) y puntos (.)" />
+
+    <!-- Campo de contraseña -->
+    <EditText
+        android:id="@+id/contrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_below="@id/nombreUsuario"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_border" />
+
+    <!-- Mensaje de error -->
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:layout_below="@id/contrasena"
+        android:visibility="gone"
+        android:text="Este correo ya está registrado"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Botón "Regístrate" -->
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regístrate"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/error_message"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Botón "Cancelar" -->
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:textColor="#FFFFFF"
+        android:background="#808080"
+        android:layout_below="@id/register_button" />
+</RelativeLayout>
